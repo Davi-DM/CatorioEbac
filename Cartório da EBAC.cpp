@@ -123,58 +123,76 @@ int deletar()
 	
 int main()
 {
-//Definindo variáveis
+	//Definindo variáveis
 	int opcao=0;
 	int laco=1;
-			
-	for(laco=1;laco=1;)
+	
+	//Senha de segurança para o sistema
+	
+	
+	char senhadigitada[]="a";//variável responsavel por amarzenar caracteres
+	int comparacao; 
+	
+	printf("### Cartório da EBAC ###\n\n");
+	printf("Login de Administrador!\n\nDigite a sua senha: ");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-					
 		system("cls");// Responsável por limpar a tela
-
-		//Definindo a linguagem			
-		setlocale(LC_ALL, "Portuguese");
-				
-//Inicio do Menu
-		printf("### Cartório da EBAC ###\n\n");
-		printf("Escolha a opção desejada do menu:\n\n");
-		printf("\t1 - Registrar usuários\n");
-		printf("\t2 - Consultar usuários\n");
-		printf("\t3 - Deletar usuários\n");
-		printf("\t4 - Sair do Sistema\n\n");
-		printf("Opcao: ");//Fim do menu
-		
-		scanf("%d", &opcao);// Amarzene na variável "opção" o valor que o usuário digitar
-				
-		system("cls");// Comando para deletar as mensagens que ficam em cima
-				
-		//Inicio das estruturas condicionais de seleção
-		switch(opcao)
+		for(laco=1;laco=1;)
 		{
-			case 1:
-			registrar();//Chamada de funções
-			break;
 					
-			case 2:
-			consultar();//Chamada de funções
-			break;
+			system("cls");// Responsável por limpar a tela
+	
+			//Definindo a linguagem			
+			setlocale(LC_ALL, "Portuguese");
 					
-			case 3:
-			deletar();//Chamada de funções
-			break;
+			//Inicio do Menu
+			printf("### Cartório da EBAC ###\n\n");
+			printf("Escolha a opção desejada do menu:\n\n");
+			printf("\t1 - Registrar usuários\n");
+			printf("\t2 - Consultar usuários\n");
+			printf("\t3 - Deletar usuários\n");
+			printf("\t4 - Sair do Sistema\n\n");
+			printf("Opcao: ");//Fim do menu
 			
-			case 4:
-			printf("Obrigado por utilizar o sitema!\n");
-			return 0;
-			break;
-										
-			default:
-			printf("Esta opção não está disponível!\n");
-			system("pause");
-			break;
-			//Fim da seleção
-		}
+			scanf("%d", &opcao);// Amarzene na variável "opção" o valor que o usuário digitar
+					
+			system("cls");// Comando para deletar as mensagens que ficam em cima
+					
+			//Inicio das estruturas condicionais de seleção
+			switch(opcao)
+			{
+				case 1:
+				registrar();//Chamada de funções
+				break;
+						
+				case 2:
+				consultar();//Chamada de funções
+				break;
+						
+				case 3:
+				deletar();//Chamada de funções
+				break;
 				
+				case 4:
+				printf("Obrigado por utilizar o sitema!\n");
+				return 0;
+				break;
+											
+				default:
+				printf("Esta opção não está disponível!\n");
+				system("pause");
+				break;
+				//Fim da seleção
+			}	
+		}
 	}
-		
+	else
+		printf("Senha incorreta!");	
 }
+
+
